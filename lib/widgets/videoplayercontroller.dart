@@ -46,11 +46,21 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                   aspectRatio: _controller.value.aspectRatio,
                   child: VideoPlayer(_controller),
                 ),
-                IconButton(
-                  onPressed: () {
-                    _controller.play();
-                  },
-                  icon: Icon(Icons.play_arrow),
+                Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        _controller.play();
+                      },
+                      icon: Icon(Icons.play_arrow),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        _controller.pause();
+                      },
+                      icon: Icon(Icons.pause),
+                    ),
+                  ],
                 ),
               ],
             );
