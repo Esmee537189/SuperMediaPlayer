@@ -63,6 +63,15 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                         false => Icons.play_arrow,
                       }),
                     ),
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _controller.pause();
+                          _controller.seekTo(Duration.zero);
+                        });
+                      },
+                      icon: Icon(Icons.stop),
+                    ),
                   ],
                 ),
               ],
