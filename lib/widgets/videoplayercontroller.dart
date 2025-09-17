@@ -80,7 +80,17 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                           );
                         });
                       },
-                      icon: Icon(Icons.forward),
+                      icon: Icon(Icons.fast_forward),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _controller.seekTo(
+                            _controller.value.position - Duration(seconds: 5),
+                          );
+                        });
+                      },
+                      icon: Icon(Icons.fast_rewind),
                     ),
                   ],
                 ),
