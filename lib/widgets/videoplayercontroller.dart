@@ -50,15 +50,18 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                   children: [
                     IconButton(
                       onPressed: () {
-                        _controller.play();
+                        setState(() {
+                          if (_controller.value.isPlaying) {
+                            _controller.pause();
+                          } else {
+                            _controller.play();
+                          }
+                        });
                       },
-                      icon: Icon(Icons.play_arrow),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        _controller.pause();
-                      },
-                      icon: Icon(Icons.pause),
+                      icon: Icon(switch (_controller.value.isPlaying) {
+                        true => Icons.pause,
+                        false => Icons.play_arrow,
+                      }),
                     ),
                   ],
                 ),
