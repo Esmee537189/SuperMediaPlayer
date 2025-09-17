@@ -72,6 +72,16 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                       },
                       icon: Icon(Icons.stop),
                     ),
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _controller.seekTo(
+                            _controller.value.position + Duration(seconds: 5),
+                          );
+                        });
+                      },
+                      icon: Icon(Icons.forward),
+                    ),
                   ],
                 ),
               ],
